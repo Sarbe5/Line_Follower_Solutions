@@ -1,0 +1,4 @@
+Invoking command in '/home/aryanbhalkikar/RISC_Hack_PS/ros2_ps_ws/build/my_robot_bringup': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/aryanbhalkikar/RISC_Hack_PS/ros2_ps_ws/build/my_robot_bringup -- -j8 -l8
+Invoked command in '/home/aryanbhalkikar/RISC_Hack_PS/ros2_ps_ws/build/my_robot_bringup' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/aryanbhalkikar/RISC_Hack_PS/ros2_ps_ws/build/my_robot_bringup -- -j8 -l8
+Invoking command in '/home/aryanbhalkikar/RISC_Hack_PS/ros2_ps_ws/build/my_robot_bringup': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/aryanbhalkikar/RISC_Hack_PS/ros2_ps_ws/build/my_robot_bringup
+Invoked command in '/home/aryanbhalkikar/RISC_Hack_PS/ros2_ps_ws/build/my_robot_bringup' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/aryanbhalkikar/RISC_Hack_PS/ros2_ps_ws/build/my_robot_bringup

@@ -1,0 +1,33 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/aryanbhalkikar/RISC_Hack_PS/ros2_ps_ws/install/my_py_pkg/lib/python3.12/site-packages",
+        "/home/aryanbhalkikar/px4_ros2_ws/install/px4_ros_com/lib/python3.12/site-packages",
+        "/home/aryanbhalkikar/px4_ros2_ws/install/drone_controller/lib/python3.12/site-packages",
+        "/home/aryanbhalkikar/px4_ros2_ws/install/px4_msgs/lib/python3.12/site-packages",
+        "/home/aryanbhalkikar/nidar_ws/install/px4_ros_com/lib/python3.12/site-packages",
+        "/home/aryanbhalkikar/nidar_ws/install/px4_msgs/lib/python3.12/site-packages",
+        "/home/aryanbhalkikar/nidar_ws/install/my_robot_interfaces/lib/python3.12/site-packages",
+        "/home/aryanbhalkikar/nidar_ws/install/drone_controller/lib/python3.12/site-packages",
+        "/home/aryanbhalkikar/ros2_ws2/install/my_py_pkg/lib/python3.12/site-packages",
+        "/home/aryanbhalkikar/ros2_ws/install/turtle_catcher_pkg/lib/python3.12/site-packages",
+        "/home/aryanbhalkikar/ros2_ws/install/my_py_pkg/lib/python3.12/site-packages",
+        "/home/aryanbhalkikar/ros2_ws/install/my_robot_interfaces/lib/python3.12/site-packages",
+        "/opt/ros/jazzy/lib/python3.12/site-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/aryanbhalkikar/RISC_Hack_PS/ros2_ps_ws/install/my_py_pkg/lib/python3.12/site-packages",
+        "/home/aryanbhalkikar/px4_ros2_ws/install/px4_ros_com/lib/python3.12/site-packages",
+        "/home/aryanbhalkikar/px4_ros2_ws/install/drone_controller/lib/python3.12/site-packages",
+        "/home/aryanbhalkikar/px4_ros2_ws/install/px4_msgs/lib/python3.12/site-packages",
+        "/home/aryanbhalkikar/nidar_ws/install/px4_ros_com/lib/python3.12/site-packages",
+        "/home/aryanbhalkikar/nidar_ws/install/px4_msgs/lib/python3.12/site-packages",
+        "/home/aryanbhalkikar/nidar_ws/install/my_robot_interfaces/lib/python3.12/site-packages",
+        "/home/aryanbhalkikar/nidar_ws/install/drone_controller/lib/python3.12/site-packages",
+        "/home/aryanbhalkikar/ros2_ws2/install/my_py_pkg/lib/python3.12/site-packages",
+        "/home/aryanbhalkikar/ros2_ws/install/turtle_catcher_pkg/lib/python3.12/site-packages",
+        "/home/aryanbhalkikar/ros2_ws/install/my_py_pkg/lib/python3.12/site-packages",
+        "/home/aryanbhalkikar/ros2_ws/install/my_robot_interfaces/lib/python3.12/site-packages",
+        "/opt/ros/jazzy/lib/python3.12/site-packages"
+    ],
+    "cmake.sourceDirectory": "/home/aryanbhalkikar/RISC_Hack_PS/ros2_ps_ws/src/my_robot_bringup"
+}

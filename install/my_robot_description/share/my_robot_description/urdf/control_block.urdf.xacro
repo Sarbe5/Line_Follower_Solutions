@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro = "http://www.ros.org/wiki/xacro">
+
+    <ros2_control name="DiffBotSystem" type="system">
+        <hardware>
+            <plugin>gazebo_ros2_control/DefaultSystemSimulation</plugin>
+        </hardware>
+
+        <joint name="base_left_wheel_joint">
+        <state_interface>position</state_interface>
+        <state_interface>velocity</state_interface>
+        <command_interface>velocity</command_interface>
+        </joint>
+
+        <joint name="base_right_wheel_joint">
+        <state_interface>position</state_interface>
+        <state_interface>velocity</state_interface>
+        <command_interface>velocity</command_interface>
+        </joint>
+    </ros2_control>
+
+</robot>

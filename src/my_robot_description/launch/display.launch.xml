@@ -1,0 +1,40 @@
+<launch>
+    <let name = "urdf_path" 
+         value = "$(find-pkg-share my_robot_description)/urdf/my_robot.urdf.xacro" />
+
+    <let name = "gz_sim_path" 
+         value = "$(find-pkg-share ros_gz_sim)/launch/gz_sim.launch.py" />
+
+    <let name = "world_path" 
+         value = "$(find-pkg-share my_robot_bringup)/worlds/world.sdf" />
+
+    <let name = "gazebo_config_path" 
+         value = "$(find-pkg-share my_robot_bringup)/config/gazebo_bridge.yaml" />
+
+     <let name = "controllers_config_path"
+          value = "$(find-pkg-share my_robot_bringup)/config/controllers.yaml" />
+
+    <node pkg = "robot_state_publisher" exec = "robot_state_publisher">
+        <param name = "robot_description"
+                value = "$(command 'xacro $(var urdf_path)')" />
+    </node>
+
+    <include file = "$(var gz_sim_path)" >
+        <arg name = "gz_args" value = "$(var world_path) -r" />
+    </include>
+
+    <node pkg = "ros_gz_sim" exec = "create" args = "-topic robot_description" />
+
+    <node pkg = "ros_gz_bridge" exec = "parameter_bridge" >
+        <param name = "config_file" value = "$(var gazebo_config_path)" />
+    </node>
+
+    <node pkg="controller_manager" exec="spawner" name="joint_state_broadcaster_spawner" 
+          args="joint_state_broadcaster --controller-manager /controller_manager --timout 30.0" 
+          output="screen" />
+
+    <node pkg="controller_manager" exec="spawner" name="diff_drive_controller_spawner" 
+          args="diff_drive_controller --controller-manager /controller_manager --timeout 30.0" 
+          output="screen" />
+
+</launch>
