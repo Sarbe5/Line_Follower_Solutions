@@ -20,6 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'line_follower_controller=my_py_pkg.line_follower_controller:main',
         ],
     },
 )
