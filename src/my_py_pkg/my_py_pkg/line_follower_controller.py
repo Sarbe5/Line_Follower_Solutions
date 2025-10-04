@@ -17,7 +17,7 @@ class LineFollowerControllerNode(Node):
         self.br = CvBridge()
 
         # Proportional control parameters
-        self.Kp = 1  # Proportional gain
+        self.Kp = 2.0  # Proportional gain
 
     def callback(self, msg):
 
@@ -27,7 +27,7 @@ class LineFollowerControllerNode(Node):
 
         twist = Twist()
 
-        linear_x = 0.2
+        linear_x = 0.4
 
         h_min, h_max = 0, 179      # allow all hues
         s_min, s_max = 0, 255      # allow all saturation
@@ -41,7 +41,6 @@ class LineFollowerControllerNode(Node):
         # Region of interest (keep the lower 1/5 of the image)
         height, width = mask.shape
         roi = mask.copy()
-        roi[: 4 * height // 5, :] = 0
 
         # Calculate centroid of the region of interest
         M = cv2.moments(roi)
@@ -58,7 +57,7 @@ class LineFollowerControllerNode(Node):
 
         else:
             twist.linear.x = 0.0
-            twist.angular.z = 0.1
+            twist.angular.z = 2.0
 
         self.publisher.publish(twist)
 

@@ -1,0 +1,356 @@
+<?xml version="1.0"?>
+<sdf version='1.10'>
+  <world name='empty'>
+    <physics name='1ms' type='ignored'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <plugin name='gz::sim::systems::Physics' filename='gz-sim-physics-system'/>
+    <plugin name='gz::sim::systems::UserCommands' filename='gz-sim-user-commands-system'/>
+    <plugin name='gz::sim::systems::SceneBroadcaster' filename='gz-sim-scene-broadcaster-system'/>
+    <plugin name='gz::sim::systems::Contact' filename='gz-sim-contact-system'/>
+    <plugin name='gz::sim::systems::Sensors' filename='gz-sim-sensors-system'>
+      <render_engine>ogre2</render_engine>
+    </plugin>
+    <gravity>0 0 -9.8000000000000007</gravity>
+    <magnetic_field>5.5644999999999998e-06 2.2875799999999999e-05 -4.2388400000000002e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <scene>
+      <ambient>0.400000006 0.400000006 0.400000006 1</ambient>
+      <background>0.699999988 0.699999988 0.699999988 1</background>
+      <shadows>true</shadows>
+    </scene>
+
+    <model name='ground_plane'>
+      <static>true</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>0.800000012 0.800000012 0.800000012 1</ambient>
+            <diffuse>0.800000012 0.800000012 0.800000012 1</diffuse>
+            <specular>0.800000012 0.800000012 0.800000012 1</specular>
+          </material>
+        </visual>
+
+        <!-- Complex continuous track - each segment connects to the next -->
+        
+        <!-- Start: straight horizontal from origin -->
+        <!-- From (0,0) to (3,0) -->
+        <visual name="line1">
+          <pose>1.5 0 0.001 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>3 0.03 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+
+        <!-- Diagonal northeast -->
+        <!-- From (3,0) to (4.5,-1.5) -->
+        <visual name="line2">
+          <pose>3.75 -0.75 0.001 0 0 -0.785398</pose>
+          <geometry>
+            <box>
+              <size>2.12 0.03 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+
+        <!-- Short horizontal right -->
+        <!-- From (4.5,-1.5) to (6,-1.5) -->
+        <visual name="line3">
+          <pose>5.25 -1.5 0.001 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>1.5 0.03 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+
+        <!-- Sharp right turn down -->
+        <!-- From (6,-1.5) to (6,-4) -->
+        <visual name="line4">
+          <pose>6 -2.75 0.001 0 0 -1.5708</pose>
+          <geometry>
+            <box>
+              <size>2.5 0.03 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+
+        <!-- Diagonal southwest -->
+        <!-- From (6,-4) to (4,-6) -->
+        <visual name="line5">
+          <pose>5 -5 0.001 0 0 -2.356194</pose>
+          <geometry>
+            <box>
+              <size>2.828 0.03 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+
+        <!-- Left horizontal -->
+        <!-- From (4,-6) to (1,-6) -->
+        <visual name="line6">
+          <pose>2.5 -6 0.001 0 0 3.14159</pose>
+          <geometry>
+            <box>
+              <size>3 0.03 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+
+        <!-- Down segment -->
+        <!-- From (1,-6) to (1,-8) -->
+        <visual name="line7">
+          <pose>1 -7 0.001 0 0 -1.5708</pose>
+          <geometry>
+            <box>
+              <size>2 0.03 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+
+        <!-- Left horizontal -->
+        <!-- From (1,-8) to (-2,-8) -->
+        <visual name="line8">
+          <pose>-0.5 -8 0.001 0 0 3.14159</pose>
+          <geometry>
+            <box>
+              <size>3 0.03 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+
+        <!-- Diagonal up-left -->
+        <!-- From (-2,-8) to (-4,-6) -->
+        <visual name="line9">
+          <pose>-3 -7 0.001 0 0 -0.785398</pose>
+          <geometry>
+            <box>
+              <size>2.828 0.03 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+
+        <!-- Up segment -->
+        <!-- From (-4,-6) to (-4,-3) -->
+        <visual name="line10">
+          <pose>-4 -4.5 0.001 0 0 1.5708</pose>
+          <geometry>
+            <box>
+              <size>3 0.03 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+
+        <!-- Right horizontal -->
+        <!-- From (-4,-3) to (-1,-3) -->
+        <visual name="line11">
+          <pose>-2.5 -3 0.001 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>3 0.03 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+
+        <!-- Diagonal down-right -->
+        <!-- From (-1,-3) to (1,-5) -->
+        <visual name="line12">
+          <pose>0 -4 0.001 0 0 -0.785398</pose>
+          <geometry>
+            <box>
+              <size>2.828 0.03 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+
+        <!-- Right horizontal -->
+        <!-- From (1,-5) to (3.5,-5) -->
+        <visual name="line13">
+          <pose>2.25 -5 0.001 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>2.5 0.03 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+
+        <!-- Up segment -->
+        <!-- From (3.5,-5) to (3.5,-2.5) -->
+        <visual name="line14">
+          <pose>3.5 -3.75 0.001 0 0 1.5708</pose>
+          <geometry>
+            <box>
+              <size>2.5 0.03 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+
+        <!-- Diagonal up-left back to start area -->
+        <!-- From (3.5,-2.5) to (1.5,-0.5) -->
+        <visual name="line15">
+          <pose>2.5 -1.5 0.001 0 0 -0.785398</pose>
+          <geometry>
+            <box>
+              <size>2.828 0.03 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+
+        <!-- Left to close loop -->
+        <!-- From (1.5,-0.5) to (0,-0.5) -->
+        <visual name="line16">
+          <pose>0.75 -0.5 0.001 0 0 3.14159</pose>
+          <geometry>
+            <box>
+              <size>1.5 0.03 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+
+        <!-- Up to complete loop -->
+        <!-- From (0,-0.5) to (0,0) -->
+        <visual name="line17">
+          <pose>0 -0.25 0.001 0 0 1.5708</pose>
+          <geometry>
+            <box>
+              <size>0.5 0.03 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 0 1</ambient>
+            <diffuse>0 0 0 1</diffuse>
+          </material>
+        </visual>
+
+        <!-- End of track design -->
+
+        <pose>0 0 0 0 0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>0 0 0 0 0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+
+    <light name='sun' type='directional'>
+      <pose>0 0 10 0 0 0</pose>
+      <cast_shadows>true</cast_shadows>
+      <intensity>1</intensity>
+      <direction>-0.5 0.10000000000000001 -0.90000000000000002</direction>
+      <diffuse>0.800000012 0.800000012 0.800000012 1</diffuse>
+      <specular>0.200000003 0.200000003 0.200000003 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <linear>0.01</linear>
+        <constant>0.90000000000000002</constant>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+
+  </world>
+</sdf>

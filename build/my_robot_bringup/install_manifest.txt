@@ -1,6 +1,7 @@
 /home/aryanbhalkikar/RISC_Hack_PS/ros2_ps_ws/install/my_robot_bringup/share/my_robot_bringup//config/gazebo_bridge.yaml
 /home/aryanbhalkikar/RISC_Hack_PS/ros2_ps_ws/install/my_robot_bringup/share/my_robot_bringup//config/controllers.yaml
 /home/aryanbhalkikar/RISC_Hack_PS/ros2_ps_ws/install/my_robot_bringup/share/my_robot_bringup//worlds/world.sdf
+/home/aryanbhalkikar/RISC_Hack_PS/ros2_ps_ws/install/my_robot_bringup/share/my_robot_bringup//worlds/better_world.sdf
 /home/aryanbhalkikar/RISC_Hack_PS/ros2_ps_ws/install/my_robot_bringup/share/ament_index/resource_index/package_run_dependencies/my_robot_bringup
 /home/aryanbhalkikar/RISC_Hack_PS/ros2_ps_ws/install/my_robot_bringup/share/ament_index/resource_index/parent_prefix_path/my_robot_bringup
 /home/aryanbhalkikar/RISC_Hack_PS/ros2_ps_ws/install/my_robot_bringup/share/my_robot_bringup/environment/ament_prefix_path.sh
